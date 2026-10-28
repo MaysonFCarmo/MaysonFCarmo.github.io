@@ -1,0 +1,277 @@
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #111827;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #111827cc;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: #2ecdc4;
+  color: #111827;
+}
+
+.carousel-prev {
+  left: 12px;
+}
+
+.carousel-next {
+  right: 12px;
+}
+
+.carousel-bottom {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff80;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  width: 20px;
+  border-radius: 8px;
+  background: #2ecdc4;
+}
+
+.carousel-counter {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #111827cc;
+  color: white;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.carousel-empty {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #111827;
+  color: #94a3b8;
+}
+
+@media (max-width: 600px) {
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .carousel-dots {
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track,
+  .carousel-arrow {
+    transition: none;
+  }
+}
+
+
+/* Imagem clicável dentro do carrossel */
+
+.carousel-image-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.carousel-image-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-image-button:focus-visible {
+  outline: 3px solid #2ecdc4;
+  outline-offset: -3px;
+}
+
+/* Visualizador ampliado */
+
+.carousel-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 70px;
+  background: rgba(5, 10, 20, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #ffffff15;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: #2ecdc4;
+  color: #111827;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #ffffff15;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-arrow:hover {
+  background: #2ecdc4;
+  color: #111827;
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: #ffffff15;
+  color: white;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .carousel-lightbox {
+    padding: 65px 12px;
+  }
+
+  .lightbox-arrow {
+    width: 36px;
+    height: 36px;
+    background: #111827cc;
+  }
+
+  .lightbox-prev {
+    left: 6px;
+  }
+
+  .lightbox-next {
+    right: 6px;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+}
+

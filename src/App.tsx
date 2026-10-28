@@ -1,7 +1,9 @@
 
 import { useEffect, useState } from 'react'
 import { projects } from './data/projects'
+import ProjectCarousel from './components/ProjectCarousel'
 import './App.css'
+import TechnologyIcons from './components/TechnologyIcons'
 
 const skills = [
   {
@@ -40,13 +42,17 @@ function App() {
 
   return (
     <div className="site">
+      {/* CABEÇALHO */}
       <header className="site-header">
         <div className="container header-inner">
           <a className="brand" href="#inicio" onClick={closeMenu}>
             M<span>.</span>Farias
           </a>
 
-          <nav className={menuOpen ? 'nav open' : 'nav'} aria-label="Navegação principal">
+          <nav
+            className={menuOpen ? 'nav open' : 'nav'}
+            aria-label="Navegação principal"
+          >
             <a href="#sobre" onClick={closeMenu}>Sobre</a>
             <a href="#projetos" onClick={closeMenu}>Projetos</a>
             <a href="#habilidades" onClick={closeMenu}>Habilidades</a>
@@ -58,7 +64,11 @@ function App() {
               className="theme-button"
               type="button"
               onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+              aria-label={
+                theme === 'dark'
+                  ? 'Ativar tema claro'
+                  : 'Ativar tema escuro'
+              }
               title="Alternar tema"
             >
               {theme === 'dark' ? '☀' : '☾'}
@@ -78,9 +88,12 @@ function App() {
       </header>
 
       <main>
+        {/* SEÇÃO INICIAL */}
         <section className="hero container" id="inicio">
           <div className="hero-topline">
-            <span className="eyebrow">DESENVOLVIMENTO DE SOFTWARE / PORTFÓLIO</span>
+            <span className="eyebrow">
+              DESENVOLVIMENTO DE SOFTWARE / PORTFÓLIO
+            </span>
             <span className="hero-year">2026 — BRASIL</span>
           </div>
 
@@ -107,7 +120,8 @@ function App() {
 
             <div className="hero-buttons">
               <a className="button button-primary" href="#projetos">
-                Explorar projetos <span aria-hidden="true">↗</span>
+                Explorar projetos
+                <span aria-hidden="true"> ↗</span>
               </a>
 
               <a
@@ -127,16 +141,21 @@ function App() {
           </div>
         </section>
 
+        {/* SOBRE MIM */}
         <section className="section about-section" id="sobre">
           <div className="container section-grid">
             <div>
-              <span className="section-kicker">01 / SOBRE MIM</span>
+              <span className="section-kicker">
+                01 / SOBRE MIM
+              </span>
             </div>
 
             <div className="section-body">
               <h2>
                 Tecnologia é sobre
-                <span className="muted-heading"> resolver problemas.</span>
+                <span className="muted-heading">
+                  {' '}resolver problemas.
+                </span>
               </h2>
 
               <p>
@@ -157,23 +176,34 @@ function App() {
               <div className="about-facts">
                 <div>
                   <span className="fact-label">FORMAÇÃO</span>
-                  <strong>Análise e Desenvolvimento de Sistemas</strong>
+                  <strong>
+                    Análise e Desenvolvimento de Sistemas
+                  </strong>
                 </div>
+
                 <div>
                   <span className="fact-label">FOCO</span>
-                  <strong>Desenvolvimento Web & Full Stack</strong>
+                  <strong>
+                    Desenvolvimento Web & Full Stack
+                  </strong>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* PROJETOS */}
         <section className="section projects-section" id="projetos">
           <div className="container">
             <div className="section-heading">
               <div>
-                <span className="section-kicker">02 / TRABALHOS SELECIONADOS</span>
-                <h2>Projetos<span className="period">.</span></h2>
+                <span className="section-kicker">
+                  02 / TRABALHOS SELECIONADOS
+                </span>
+
+                <h2>
+                  Projetos<span className="period">.</span>
+                </h2>
               </div>
 
               <p>
@@ -183,84 +213,108 @@ function App() {
             </div>
 
             <div className="projects-grid">
-              {projects.filter(project => project.featured).map(project => (
-                <article className="project-card" key={project.id}>
-                  <div className={`project-visual visual-${project.id}`}>
-                    <div className="project-visual-top">
-                      <span>{project.number} / PROJETO</span>
-                      <span className="visual-plus">✳</span>
+              {projects
+                .filter(project => project.featured)
+                .map(project => (
+                  <article
+                    className="project-card"
+                    key={project.id}
+                  >
+                    {/* CARROSSEL DE IMAGENS */}
+                    <div
+                      className={
+                        `project-visual visual-${project.id}`
+                      }
+                    >
+                      <ProjectCarousel
+                        images={project.images}
+                        title={project.title}
+                      />
                     </div>
 
-                    <div className="project-visual-center">
-                      <span className="project-symbol">
-                        {project.id === 'conrapp' ? 'C/' : 'S/'}
-                      </span>
-                      <strong>{project.title}</strong>
-                      <span>{project.category}</span>
-                    </div>
+                    {/* INFORMAÇÕES DO PROJETO */}
+                    <div className="project-details">
+                      <div className="project-title-row">
+                        <h3>{project.title}</h3>
 
-                    <div className="project-visual-bottom">
-                      <span>DESIGN & DEVELOPMENT</span>
-                      <span>↗</span>
-                    </div>
-                  </div>
+                        <span className="project-status">
+                          {project.status}
+                        </span>
+                      </div>
 
-                  <div className="project-details">
-                    <div className="project-title-row">
-                      <h3>{project.title}</h3>
-                      <span className="project-status">{project.status}</span>
-                    </div>
+                      <p>{project.description}</p>
 
-                    <p>{project.description}</p>
+                      {/* TECNOLOGIAS */}
+                      <TechnologyIcons technologies={project.technologies} />
 
-                    <div className="tech-list">
-                      {project.technologies.map(tech => (
-                        <span key={tech}>{tech}</span>
-                      ))}
-                    </div>
+                      {/* LINKS DO PROJETO */}
+                      <div className="project-actions">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Ver código ↗
+                          </a>
+                        )}
 
-                    <div className="project-actions">
-                      {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          Ver código ↗
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          Demonstração ↗
-                        </a>
-                      )}
-                      {!project.github && !project.demo && (
-                        <span>Detalhes e demonstração em preparação</span>
-                      )}
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Demonstração ↗
+                          </a>
+                        )}
+
+                        {!project.github && !project.demo && (
+                          <span>
+                            Detalhes e demonstração em preparação
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                ))}
             </div>
           </div>
         </section>
 
-        <section className="section skills-section" id="habilidades">
+        {/* HABILIDADES */}
+        <section
+          className="section skills-section"
+          id="habilidades"
+        >
           <div className="container section-grid">
             <div>
-              <span className="section-kicker">03 / CONHECIMENTOS</span>
+              <span className="section-kicker">
+                03 / CONHECIMENTOS
+              </span>
             </div>
 
             <div className="section-body">
               <h2>
                 Ferramentas que transformam
-                <span className="muted-heading"> ideias em código.</span>
+                <span className="muted-heading">
+                  {' '}ideias em código.
+                </span>
               </h2>
 
               <div className="skills-groups">
                 {skills.map(group => (
-                  <div className="skill-group" key={group.title}>
+                  <div
+                    className="skill-group"
+                    key={group.title}
+                  >
                     <h3>{group.title}</h3>
 
                     <div className="skills-tags">
                       {group.items.map(item => (
-                        <span key={item}>{item}</span>
+                        <span key={item}>
+                          {item}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -270,14 +324,22 @@ function App() {
           </div>
         </section>
 
-        <section className="section contact-section" id="contato">
+        {/* CONTATO */}
+        <section
+          className="section contact-section"
+          id="contato"
+        >
           <div className="container">
-            <span className="section-kicker">04 / CONTATO</span>
+            <span className="section-kicker">
+              04 / CONTATO
+            </span>
+
             <h2>
               Vamos construir
               <br />
               algo <span>incrível?</span>
             </h2>
+
             <p>
               Aberto a conexões, colaboração em projetos
               e oportunidades na área de desenvolvimento.
@@ -306,11 +368,20 @@ function App() {
         </section>
       </main>
 
+      {/* RODAPÉ */}
       <footer className="site-footer">
         <div className="container footer-inner">
-          <a className="brand" href="#inicio">M<span>.</span>Farias</a>
-          <span>© {new Date().getFullYear()} Mayson Farias</span>
-          <a href="#inicio">VOLTAR AO TOPO ↑</a>
+          <a className="brand" href="#inicio">
+            M<span>.</span>Farias
+          </a>
+
+          <span>
+            © {new Date().getFullYear()} Mayson Farias
+          </span>
+
+          <a href="#inicio">
+            VOLTAR AO TOPO ↑
+          </a>
         </div>
       </footer>
     </div>

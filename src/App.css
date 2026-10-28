@@ -953,3 +953,12 @@ button:focus-visible {
     gap: 12px;
   }
 }
+
+/* Centralizar quando houver apenas um projeto */
+
+.projects-grid > .project-card:only-child {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 780px;
+  justify-self: center;
+}
