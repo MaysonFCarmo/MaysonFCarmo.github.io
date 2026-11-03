@@ -37,7 +37,7 @@ Aplicação web para coleta e análise de feedbacks, utilizando indicadores de e
 
 **Tecnologias:** React, JavaScript, HTML5, CSS3, Supabase, PostgreSQL e ApexCharts.
 
-**[Ver projeto no GitHub](https://github.com/MaysonFCarmo)**
+**[Ver projeto no GitHub](https://github.com/MaysonFCarmo/Avali-plus)**
 
 ## 🛠️ Tecnologias e ferramentas
 
