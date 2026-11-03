@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { projects } from './data/projects'
-import ProjectCarousel from './components/ProjectCarousel'
+import ProjectShowcase from './components/ProjectShowcase'
 import './App.css'
 import TechnologyIcons from './components/TechnologyIcons'
 
@@ -221,16 +221,15 @@ function App() {
                     key={project.id}
                   >
                     {/* CARROSSEL DE IMAGENS */}
-                    <div
-                      className={
-                        `project-visual visual-${project.id}`
-                      }
-                    >
-                      <ProjectCarousel
+
+                    <div className={`project-visual visual-${project.id}`}>
+                      <ProjectShowcase
                         images={project.images}
                         title={project.title}
+                        demo={project.demo}
                       />
                     </div>
+
 
                     {/* INFORMAÇÕES DO PROJETO */}
                     <div className="project-details">

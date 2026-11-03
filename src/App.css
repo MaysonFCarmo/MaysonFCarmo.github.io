@@ -959,6 +959,183 @@ button:focus-visible {
 .projects-grid > .project-card:only-child {
   grid-column: 1 / -1;
   width: 100%;
-  max-width: 780px;
+  max-width: 650px;
   justify-self: center;
 }
+
+/* Permitir que o iframe tenha sua própria altura */
+
+.project-visual:has(.project-showcase) {
+  height: auto;
+  min-height: 0;
+}
+
+.project-visual .project-showcase {
+  width: 100%;
+}
+
+
+/* Organizar o cabeçalho da seção Projetos */
+
+.projects-section .section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 38px;
+}
+
+.projects-section .section-heading > p {
+  width: 100%;
+  max-width: 620px;
+  margin: 0;
+  text-align: left;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .projects-section .section-heading {
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .projects-section .section-heading > p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Layout compacto do card em destaque */
+
+.projects-grid > .project-card:only-child {
+  max-width: 650px;
+}
+
+.projects-section .project-visual:has(.project-showcase) {
+  height: auto;
+  min-height: 0;
+}
+
+.projects-section .project-showcase .project-carousel {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 700px) {
+  .projects-grid > .project-card:only-child {
+    max-width: 100%;
+  }
+}
+
+
+/* Correção da demonstração interativa Avali+ */
+
+/* Botão que abre a demonstração */
+.project-showcase .live-preview-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid #2ecdc4;
+  border-radius: 9px;
+  background: #2ecdc4;
+  color: #0b1420;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Área do convite */
+.project-showcase .live-preview-launcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+/* Janela em tela inteira */
+body .live-preview-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #0b1018;
+}
+
+/* Cabeçalho do modal */
+body .live-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  min-height: 60px;
+  background: #111827;
+  border-bottom: 1px solid #ffffff25;
+}
+
+body .live-preview-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: white;
+}
+
+body .live-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body .live-preview-actions button {
+  padding: 8px 14px;
+  border: 1px solid #ffffff40;
+  border-radius: 8px;
+  background: #ffffff12;
+  color: white;
+  cursor: pointer;
+}
+
+body .live-preview-actions a {
+  color: #2ecdc4;
+}
+
+/* Aplicação ocupando o espaço disponível */
+body .live-preview-frame {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  border: none !important;
+  background: white;
+}
+
+@media (max-width: 600px) {
+  body .live-preview-header {
+    min-height: 54px;
+    padding: 8px 12px;
+  }
+
+  .project-showcase .live-preview-launcher {
+    padding: 20px 12px;
+  }
+}
+
+

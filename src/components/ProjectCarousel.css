@@ -2,7 +2,7 @@
 .project-carousel {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 14px;
   background: #111827;

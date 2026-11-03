@@ -1,0 +1,71 @@
+
+/* Container da galeria e demonstração */
+
+.project-showcase {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Barra de navegação */
+
+.project-showcase .showcase-tabs {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 5px;
+  background: #151e2d;
+  border: 1px solid #ffffff12;
+  border-radius: 12px;
+}
+
+/* Botões */
+
+.project-showcase .showcase-tabs button {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #b9c6d8;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Botão selecionado */
+
+.project-showcase .showcase-tabs button.active {
+  color: #0b1420;
+  background: #2ecdc4;
+  border-color: #2ecdc4;
+}
+
+/* Efeito ao passar o mouse */
+
+.project-showcase .showcase-tabs button:not(.active):hover {
+  background: #ffffff10;
+  color: #ffffff;
+}
+
+.project-showcase .showcase-tabs button:focus-visible {
+  outline: 2px solid #2ecdc4;
+  outline-offset: 3px;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  .project-showcase .showcase-tabs button {
+    min-height: 40px;
+    padding: 9px 6px;
+    font-size: 11px;
+  }
+}
