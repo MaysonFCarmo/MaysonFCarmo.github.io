@@ -1,0 +1,92 @@
+/* =====================================
+   MATRIX RAIN - DOIS TEMAS
+===================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Canvas atrás do conteúdo */
+
+.hero .matrix-rain {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    mask-image: radial-gradient(ellipse at 85% 48%,
+            black 15%,
+            rgba(0, 0, 0, 0.75) 38%,
+            transparent 78%);
+
+    -webkit-mask-image: radial-gradient(ellipse at 85% 48%,
+            black 15%,
+            rgba(0, 0, 0, 0.75) 38%,
+            transparent 78%);
+}
+
+/* Conteúdo sempre acima da animação */
+
+.hero>*:not(.matrix-rain) {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Tema escuro - Matrix Tech */
+
+:root[data-theme="dark"] .hero .matrix-rain {
+    display: block;
+    opacity: 0.60;
+}
+
+/* Tema claro - Clean Tech */
+
+:root[data-theme="light"] .hero .matrix-rain {
+    display: block;
+    opacity: 0.40;
+}
+
+/* Reduzir no celular para preservar a leitura */
+
+@media (max-width: 700px) {
+    :root[data-theme="dark"] .hero .matrix-rain {
+        opacity: 0.30;
+    }
+
+    :root[data-theme="light"] .hero .matrix-rain {
+        opacity: 0.22;
+    }
+}
+
+
+.hero .matrix-rain {
+    mask-image: linear-gradient(to bottom,
+            transparent 8%,
+            black 50%,
+            transparent 100%);
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 8%,
+            black 50%,
+            transparent 100%);
+}
+
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+
+    :root[data-theme="dark"] .hero .matrix-rain,
+    :root[data-theme="light"] .hero .matrix-rain {
+        display: none;
+    }
+}

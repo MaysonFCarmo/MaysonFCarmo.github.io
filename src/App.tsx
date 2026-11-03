@@ -4,6 +4,7 @@ import { projects } from './data/projects'
 import ProjectShowcase from './components/ProjectShowcase'
 import './App.css'
 import TechnologyIcons from './components/TechnologyIcons'
+import MatrixRain from './components/MatrixRain'
 
 const skills = [
   {
@@ -28,11 +29,72 @@ function App() {
   })
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('portfolio-theme', theme)
   }, [theme])
+
+
+  useEffect(() => {
+    const sectionIds = [
+      'inicio',
+      'sobre',
+      'projetos',
+      'habilidades',
+      'contato',
+    ]
+
+    const updateNavigation = () => {
+      const scrollPosition = window.scrollY
+      const headerHeight =
+        document.querySelector('.site-header')
+          ?.getBoundingClientRect().height ?? 83
+
+      const referencePosition =
+        scrollPosition + headerHeight + 110
+
+      let currentSection = 'inicio'
+
+      for (const id of sectionIds) {
+        const section = document.getElementById(id)
+
+        if (section) {
+          const sectionTop =
+            section.getBoundingClientRect().top + scrollPosition
+
+          if (sectionTop <= referencePosition) {
+            currentSection = id
+          }
+        }
+      }
+
+      const isAtBottom =
+        window.innerHeight + scrollPosition >=
+        document.documentElement.scrollHeight - 20
+
+      if (isAtBottom) {
+        currentSection = 'contato'
+      }
+
+      setActiveSection(currentSection)
+      setShowBackToTop(scrollPosition > 450)
+    }
+
+    updateNavigation()
+
+    window.addEventListener('scroll', updateNavigation, {
+      passive: true,
+    })
+    window.addEventListener('resize', updateNavigation)
+
+    return () => {
+      window.removeEventListener('scroll', updateNavigation)
+      window.removeEventListener('resize', updateNavigation)
+    }
+  }, [])
 
   const toggleTheme = () => {
     setTheme(current => current === 'dark' ? 'light' : 'dark')
@@ -49,15 +111,34 @@ function App() {
             M<span>.</span>Farias
           </a>
 
+
           <nav
+            id="primary-navigation"
             className={menuOpen ? 'nav open' : 'nav'}
             aria-label="Navegação principal"
           >
-            <a href="#sobre" onClick={closeMenu}>Sobre</a>
-            <a href="#projetos" onClick={closeMenu}>Projetos</a>
-            <a href="#habilidades" onClick={closeMenu}>Habilidades</a>
-            <a href="#contato" onClick={closeMenu}>Contato</a>
+            {[
+              { id: 'sobre', label: 'Sobre' },
+              { id: 'projetos', label: 'Projetos' },
+              { id: 'habilidades', label: 'Habilidades' },
+              { id: 'contato', label: 'Contato' },
+            ].map(item => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={closeMenu}
+                className={
+                  activeSection === item.id ? 'active' : ''
+                }
+                aria-current={
+                  activeSection === item.id ? 'location' : undefined
+                }
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
+
 
           <div className="header-actions">
             <button
@@ -74,7 +155,7 @@ function App() {
               {theme === 'dark' ? '☀' : '☾'}
             </button>
 
-            <button
+            <button aria-controls="primary-navigation"
               className="menu-button"
               type="button"
               aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -90,6 +171,7 @@ function App() {
       <main>
         {/* SEÇÃO INICIAL */}
         <section className="hero container" id="inicio">
+          <MatrixRain />
           <div className="hero-topline">
             <span className="eyebrow">
               DESENVOLVIMENTO DE SOFTWARE / PORTFÓLIO
@@ -383,6 +465,23 @@ function App() {
           </a>
         </div>
       </footer>
+
+      {showBackToTop && (
+        <button
+          type="button"
+          className="back-to-top"
+          onClick={() => {
+            window.scrollTo({ top: 0 })
+            setActiveSection('inicio')
+            closeMenu()
+          }}
+          aria-label="Voltar ao início da página"
+          title="Voltar ao início"
+        >
+          ↑
+        </button>
+      )}
+
     </div>
   )
 }
