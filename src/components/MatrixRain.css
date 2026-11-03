@@ -51,8 +51,8 @@
 /* Tema claro - Clean Tech */
 
 :root[data-theme="light"] .hero .matrix-rain {
-    display: block;
-    opacity: 0.40;
+    display: none;
+    opacity: 0.0;
 }
 
 /* Reduzir no celular para preservar a leitura */
