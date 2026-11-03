@@ -1139,3 +1139,518 @@ body .live-preview-frame {
 }
 
 
+/* =====================================
+   ETAPA 1 - NAVEGAÇÃO E ACABAMENTO
+===================================== */
+
+/* Compensação do cabeçalho ao navegar */
+
+html {
+  scroll-padding-top: 100px;
+}
+
+#inicio,
+#sobre,
+#projetos,
+#habilidades,
+#contato {
+  scroll-margin-top: 100px;
+}
+
+/* Links do menu */
+
+.site-header .nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-header .nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.site-header .nav a:hover,
+.site-header .nav a.active {
+  color: var(--text);
+}
+
+.site-header .nav a:hover::after,
+.site-header .nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* Botão voltar ao topo */
+
+.back-to-top {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 45;
+
+  display: grid;
+  place-items: center;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface);
+  color: var(--accent);
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+
+  font-size: 24px;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  background: var(--surface-alt);
+}
+
+/* Menu mobile */
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 85px;
+  }
+
+  #inicio,
+  #sobre,
+  #projetos,
+  #habilidades,
+  #contato {
+    scroll-margin-top: 85px;
+  }
+
+  .site-header .nav {
+    gap: 8px;
+  }
+
+  .site-header .nav a {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+
+  .site-header .nav a::after {
+    display: none;
+  }
+
+  .site-header .nav a.active {
+    color: var(--accent);
+    background: var(--surface-alt);
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Respeitar preferência de movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .site-header .nav a::after,
+  .back-to-top {
+    transition: none;
+  }
+}
+
+
+/* ========================================
+   REFINAMENTO DO TEMA CLARO
+======================================== */
+
+:root[data-theme="light"] {
+  --bg: #f2f5f9;
+  --surface: #ffffff;
+  --surface-alt: #e8eef5;
+
+  --text: #17243a;
+  --muted: #42526a;
+  --subtle: #58687f;
+
+  --border: #d7e0ea;
+
+  --accent: #2556b8;
+  --accent-text: #ffffff;
+
+  --header-bg: rgba(242, 245, 249, 0.96);
+}
+
+/* Navegação no tema claro */
+
+:root[data-theme="light"] .site-header {
+  border-bottom-color: #d7e0ea;
+}
+
+:root[data-theme="light"] .nav a {
+  color: #42526a;
+}
+
+:root[data-theme="light"] .nav a:hover,
+:root[data-theme="light"] .nav a.active {
+  color: #183f90;
+}
+
+/* Seções com melhor separação */
+
+:root[data-theme="light"] .section {
+  border-top-color: #d7e0ea;
+}
+
+:root[data-theme="light"] .project-card {
+  color: var(--text);
+}
+
+/* Melhorar a leitura dos parágrafos */
+
+:root[data-theme="light"] .hero-description,
+:root[data-theme="light"] .section-body > p,
+:root[data-theme="light"] .section-heading > p,
+:root[data-theme="light"] .project-details > p,
+:root[data-theme="light"] .contact-section p {
+  color: #42526a;
+}
+
+/* Seleção de texto */
+
+:root[data-theme="light"] ::selection {
+  background: #c7dafc;
+  color: #17243a;
+}
+
+
+/* ========================================
+   ETIQUETAS DAS SEÇÕES
+======================================== */
+
+.section-kicker,
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1px;
+
+  color: var(--accent);
+}
+
+/* Barra de identificação */
+
+.section-kicker::before,
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+
+  width: 3px;
+  height: 18px;
+
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+/* Distância entre etiqueta e título */
+
+.section-kicker {
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .section-kicker,
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    gap: 8px;
+  }
+
+  .section-kicker::before,
+  .eyebrow::before {
+    height: 16px;
+  }
+}
+
+
+/* ========================================
+   IDENTIDADE VISUAL
+   DARK: MATRIX TECH
+   LIGHT: CLEAN TECH
+======================================== */
+
+/* MATRIX TECH */
+
+:root[data-theme="dark"] {
+  --bg: #080c0a;
+  --surface: #101a14;
+  --surface-alt: #19271f;
+
+  --text: #f0f7f1;
+  --muted: #a8bcaf;
+  --subtle: #8ca897;
+
+  --border: #2b4835;
+
+  --accent: #39e87c;
+  --accent-text: #08130d;
+
+  --header-bg: rgba(8, 12, 10, 0.94);
+}
+
+/* CLEAN TECH */
+
+:root[data-theme="light"] {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-alt: #edf1f7;
+
+  --text: #17263a;
+  --muted: #526176;
+  --subtle: #5d6c80;
+
+  --border: #d8dfe8;
+
+  --accent: #2563eb;
+  --accent-text: #ffffff;
+
+  --header-bg: rgba(243, 245, 248, 0.95);
+}
+
+/* Elementos gerais */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: var(--header-bg);
+  border-bottom-color: var(--border);
+}
+
+.section {
+  border-top-color: var(--border);
+}
+
+/* Identidade das seções */
+
+.section-kicker,
+.eyebrow {
+  color: var(--accent);
+}
+
+.section-kicker::before,
+.eyebrow::before {
+  background: var(--accent);
+}
+
+/* Navegação */
+
+.site-header .nav a.active {
+  color: var(--accent);
+}
+
+.site-header .nav a::after {
+  background: var(--accent);
+}
+
+/* Botões principais */
+
+.button-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.button-outline {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* Cards */
+
+.project-card {
+  color: var(--text);
+}
+
+.project-status {
+  color: var(--accent);
+}
+
+.project-actions a {
+  color: var(--accent);
+}
+
+/* Navegação do Avali+ */
+
+.project-showcase .showcase-tabs {
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+
+.project-showcase .showcase-tabs button {
+  color: var(--muted);
+}
+
+.project-showcase .showcase-tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.project-showcase .showcase-tabs button:not(.active):hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* Botão da demonstração */
+
+.project-showcase .live-preview-open {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Bloco da demonstração */
+
+.project-showcase .live-preview-launcher {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.project-showcase .live-preview-launcher h3 {
+  color: var(--text);
+}
+
+.project-showcase .live-preview-launcher p {
+  color: var(--muted);
+}
+
+.project-showcase .demo-credentials {
+  border-color: var(--border);
+  background: var(--surface-alt);
+}
+
+.project-showcase .demo-credentials strong {
+  color: var(--accent);
+}
+
+.project-showcase .demo-credential-row code {
+  color: var(--text);
+}
+
+/* Contato */
+
+.contact-section {
+  background: var(--surface);
+}
+
+/* Menu mobile */
+
+@media (max-width: 700px) {
+  .site-header .nav a.active {
+    color: var(--accent);
+    background: var(--surface-alt);
+  }
+}
+
+
+/* ========================================
+   COMPONENTES ADAPTADOS AOS TEMAS
+======================================== */
+
+/* Botões e indicadores do carrossel */
+
+.project-showcase .carousel-dot.active {
+  background: var(--accent);
+}
+
+.project-showcase .carousel-arrow:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Visualizador de imagens */
+
+body .lightbox-close:hover,
+body .lightbox-arrow:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Demonstração interativa */
+
+body .live-preview-actions a {
+  color: var(--accent);
+}
+
+body .live-preview-actions button:hover {
+  border-color: var(--accent);
+}
+
+/* Botão de voltar ao topo */
+
+.back-to-top {
+  color: var(--accent);
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+/* Ícones de tecnologia */
+
+.technology-icon:hover {
+  border-color: var(--accent);
+}
+
+.technology-fallback {
+  color: var(--accent);
+}
+
+/* Evitar cores turquesa fixas em textos */
+
+.project-showcase .live-preview-icon {
+  color: var(--accent);
+  background: var(--surface-alt);
+}
+
+.project-showcase .live-preview-external:hover {
+  color: var(--accent);
+}
+
