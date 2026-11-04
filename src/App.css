@@ -1,4 +1,3 @@
-
 :root {
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   font-synthesis: none;
@@ -223,7 +222,7 @@ button:focus-visible {
   letter-spacing: -.075em;
 }
 
-.hero h1 > span:not(.period) {
+.hero h1>span:not(.period) {
   color: var(--accent);
 }
 
@@ -299,8 +298,8 @@ button:focus-visible {
   color: var(--subtle);
 }
 
-.section-body > p,
-.section-heading > p,
+.section-body>p,
+.section-heading>p,
 .contact-section p {
   max-width: 650px;
   color: var(--muted);
@@ -317,7 +316,7 @@ button:focus-visible {
   border-top: 1px solid var(--border);
 }
 
-.about-facts > div {
+.about-facts>div {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -346,7 +345,7 @@ button:focus-visible {
   margin: 15px 0 0;
 }
 
-.section-heading > p {
+.section-heading>p {
   max-width: 360px;
 }
 
@@ -363,7 +362,7 @@ button:focus-visible {
 .project-visual {
   height: 350px;
   padding: 25px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -397,7 +396,7 @@ button:focus-visible {
   justify-content: space-between;
   font: 10px Consolas, monospace;
   letter-spacing: 1px;
-  color: rgba(255,255,255,.72);
+  color: rgba(255, 255, 255, .72);
 }
 
 .visual-plus {
@@ -417,9 +416,9 @@ button:focus-visible {
   place-items: center;
   width: 68px;
   height: 68px;
-  border: 1px solid rgba(255,255,255,.3);
+  border: 1px solid rgba(255, 255, 255, .3);
   border-radius: 19px;
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, .1);
   font-size: 25px;
   font-weight: 700;
 }
@@ -429,8 +428,8 @@ button:focus-visible {
   letter-spacing: -.04em;
 }
 
-.project-visual-center > span:last-child {
-  color: rgba(255,255,255,.65);
+.project-visual-center>span:last-child {
+  color: rgba(255, 255, 255, .65);
   font-size: 12px;
 }
 
@@ -457,7 +456,7 @@ button:focus-visible {
   color: var(--accent);
 }
 
-.project-details > p {
+.project-details>p {
   min-height: 80px;
   color: var(--muted);
   font-size: 14px;
@@ -558,8 +557,8 @@ button:focus-visible {
   gap: 20px;
 }
 
-.footer-inner > span,
-.footer-inner > a:last-child {
+.footer-inner>span,
+.footer-inner>a:last-child {
   font-size: 11px;
   color: var(--muted);
 }
@@ -773,8 +772,8 @@ button:focus-visible {
 
 /* Parágrafos */
 
-.section-body > p,
-.section-heading > p,
+.section-body>p,
+.section-heading>p,
 .contact-section p {
   font-size: 16px;
   line-height: 1.8;
@@ -812,7 +811,7 @@ button:focus-visible {
   letter-spacing: -0.02em;
 }
 
-.project-details > p {
+.project-details>p {
   min-height: 0;
   font-size: 15px;
   line-height: 1.7;
@@ -917,8 +916,8 @@ button:focus-visible {
     font-size: clamp(26px, 6vw, 32px);
   }
 
-  .section-body > p,
-  .section-heading > p,
+  .section-body>p,
+  .section-heading>p,
   .contact-section p {
     font-size: 15px;
   }
@@ -943,7 +942,7 @@ button:focus-visible {
 
 /* Centralizar quando houver apenas um projeto */
 
-.projects-grid > .project-card:only-child {
+.projects-grid>.project-card:only-child {
   grid-column: 1 / -1;
   width: 100%;
   max-width: 650px;
@@ -974,7 +973,7 @@ button:focus-visible {
   margin-bottom: 38px;
 }
 
-.projects-section .section-heading > p {
+.projects-section .section-heading>p {
   width: 100%;
   max-width: 620px;
   margin: 0;
@@ -988,7 +987,7 @@ button:focus-visible {
     margin-bottom: 26px;
   }
 
-  .projects-section .section-heading > p {
+  .projects-section .section-heading>p {
     max-width: 100%;
     font-size: 14px;
     line-height: 1.6;
@@ -997,7 +996,7 @@ button:focus-visible {
 
 /* Layout compacto do card em destaque */
 
-.projects-grid > .project-card:only-child {
+.projects-grid>.project-card:only-child {
   max-width: 650px;
 }
 
@@ -1013,7 +1012,7 @@ button:focus-visible {
 }
 
 @media (max-width: 700px) {
-  .projects-grid > .project-card:only-child {
+  .projects-grid>.project-card:only-child {
     max-width: 100%;
   }
 }
@@ -1322,9 +1321,9 @@ html {
 /* Melhorar a leitura dos parágrafos */
 
 :root[data-theme="light"] .hero-description,
-:root[data-theme="light"] .section-body > p,
-:root[data-theme="light"] .section-heading > p,
-:root[data-theme="light"] .project-details > p,
+:root[data-theme="light"] .section-body>p,
+:root[data-theme="light"] .section-heading>p,
+:root[data-theme="light"] .project-details>p,
 :root[data-theme="light"] .contact-section p {
   color: #42526a;
 }
@@ -1382,6 +1381,7 @@ html {
 }
 
 @media (max-width: 700px) {
+
   .section-kicker,
   .eyebrow {
     font-size: 12px;
@@ -1653,5 +1653,96 @@ body .live-preview-actions button:hover {
   .brand {
     font-size: 20px;
     letter-spacing: -0.7px;
+  }
+
+  .skills-section .muted-heading {
+    color: #39e87c;
+  }
+
+}
+
+/* Título da seção de conhecimentos */
+.skills-section .muted-heading {
+  color: #39e87c;
+}
+
+/* Tags de tecnologias */
+.skills-list span,
+.skill-list span,
+.tech-tag,
+.skill-pill {
+  border: 1px solid #2b4835;
+  background: transparent;
+  color: #d7e7dc;
+  transition:
+    background-color 0.7s ease,
+    color 0.7s ease,
+    border-color 0.7s ease,
+    box-shadow 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* Hover */
+.skills-list span:hover,
+.skills-list span:hover,
+.tech-tag:hover,
+.skill-pill:hover {
+  background: #39e87c;
+  color: #08130d;
+  border-color: #39e87c;
+  box-shadow: 0 0 14px rgba(57, 232, 124, 0.22);
+  transform: translateY(-1px);
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+/* ========================================
+   HOVER DAS TECNOLOGIAS - MATRIX TECH
+======================================== */
+
+/* Estado normal */
+.skills-section .skills-tags > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #101a14;
+  color: #d7e7dc;
+  border: 1px solid #2b4835;
+
+  cursor: default;
+
+  /* Sem transição ao retirar o mouse */
+  transition: none;
+}
+
+/* Ao passar o mouse */
+.skills-section .skills-tags > span:hover {
+  background-color: #39e87c;
+  color: #08130d;
+  border-color: #39e87c;
+
+  box-shadow: 0 0 12px rgba(57, 232, 124, 0.25);
+
+  transform: translateY(-2px);
+
+  /* Entrada suave e rápida */
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .skills-section .skills-tags > span:hover {
+    transition: none;
   }
 }
