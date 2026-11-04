@@ -275,3 +275,37 @@
   }
 }
 
+/* ========================================
+   CORREÇÃO 2 - CARROSSEL MATRIX TECH
+======================================== */
+
+/* Fundo das imagens */
+.project-carousel {
+  background: #0b120e;
+}
+
+/* Botões laterais */
+.project-carousel .carousel-arrow {
+  background: rgba(8, 12, 10, 0.88);
+  border-color: #2b4835;
+  color: #f0f7f1;
+}
+
+/* Botões ao passar o mouse */
+.project-carousel .carousel-arrow:hover {
+  background: #39e87c;
+  border-color: #39e87c;
+  color: #08130d;
+}
+
+/* Indicador da imagem selecionada */
+.project-carousel .carousel-dot.active {
+  background: #39e87c;
+}
+
+/* Contador de imagens */
+.project-carousel .carousel-counter {
+  background: rgba(8, 12, 10, 0.88);
+  color: #f0f7f1;
+}
+

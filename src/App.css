@@ -20,19 +20,6 @@
   --header-bg: rgba(11, 14, 19, .92);
 }
 
-:root[data-theme="light"] {
-  --bg: #f7f8fb;
-  --surface: #ffffff;
-  --surface-alt: #eef1f6;
-  --text: #19212d;
-  --muted: #526072;
-  --subtle: #687588;
-  --border: #dbe1e9;
-  --accent: #275fd1;
-  --accent-text: #ffffff;
-  --header-bg: rgba(247, 248, 251, .94);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -1654,3 +1641,17 @@ body .live-preview-actions button:hover {
   color: var(--accent);
 }
 
+/* ========================================
+   CORREÇÃO 1 - DESTAQUE DOS TÍTULOS
+======================================== */
+
+.about-section .muted-heading {
+  color: #39e87c;
+}
+
+@media (max-width: 700px) {
+  .brand {
+    font-size: 20px;
+    letter-spacing: -0.7px;
+  }
+}

@@ -22,20 +22,17 @@ const skills = [
 ]
 
 function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    return localStorage.getItem('portfolio-theme') === 'light'
-      ? 'light'
-      : 'dark'
-  })
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
   const [showBackToTop, setShowBackToTop] = useState(false)
 
+
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('portfolio-theme', theme)
-  }, [theme])
+    document.documentElement.setAttribute('data-theme', 'dark')
+    localStorage.removeItem('portfolio-theme')
+  }, [])
+
 
 
   useEffect(() => {
@@ -96,10 +93,6 @@ function App() {
     }
   }, [])
 
-  const toggleTheme = () => {
-    setTheme(current => current === 'dark' ? 'light' : 'dark')
-  }
-
   const closeMenu = () => setMenuOpen(false)
 
   return (
@@ -108,7 +101,7 @@ function App() {
       <header className="site-header">
         <div className="container header-inner">
           <a className="brand" href="#inicio" onClick={closeMenu}>
-            M<span>.</span>Farias
+            Mayson <span>F.</span>
           </a>
 
 
@@ -141,19 +134,6 @@ function App() {
 
 
           <div className="header-actions">
-            <button
-              className="theme-button"
-              type="button"
-              onClick={toggleTheme}
-              aria-label={
-                theme === 'dark'
-                  ? 'Ativar tema claro'
-                  : 'Ativar tema escuro'
-              }
-              title="Alternar tema"
-            >
-              {theme === 'dark' ? '☀' : '☾'}
-            </button>
 
             <button aria-controls="primary-navigation"
               className="menu-button"
@@ -453,7 +433,7 @@ function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <a className="brand" href="#inicio">
-            M<span>.</span>Farias
+            Mayson <span>F.</span>
           </a>
 
           <span>

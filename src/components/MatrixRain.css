@@ -41,19 +41,30 @@
 }
 
 
-/* Tema escuro - Matrix Tech */
 
-:root[data-theme="dark"] .hero .matrix-rain {
-    display: block;
-    opacity: 0.60;
+/* Chuva Matrix - tema único */
+
+.hero .matrix-rain {
+  display: block;
+  opacity: 0.60;
 }
 
-/* Tema claro - Clean Tech */
+/* Dispositivos móveis */
 
-:root[data-theme="light"] .hero .matrix-rain {
+@media (max-width: 700px) {
+  .hero .matrix-rain {
+    opacity: 0.30;
+  }
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .matrix-rain {
     display: none;
-    opacity: 0.0;
+  }
 }
+
 
 /* Reduzir no celular para preservar a leitura */
 
