@@ -20,11 +20,11 @@ export const projects: Project[] = [
   number: '02',
   title: 'ConrApp',
   category: 'Plataforma Acadêmica · Full Stack',
-  description:
-    'Plataforma acadêmica para conectar estudantes e professores, ' +
-    'com comunidades, discussões, calendário, eventos e inscrições. ' +
-    'Desenvolvida com React, Node.js e Express, ' +
-    'com autenticação demonstrativa e regras de acesso por perfil.',
+  
+description:
+  'Plataforma acadêmica com calendário de eventos, ' +
+  'comunidades, discussões e inscrições, conectando ' +
+  'estudantes e professores em um único ambiente.',
   technologies: [
     'HTML5',
     'CSS3',
@@ -36,6 +36,7 @@ export const projects: Project[] = [
   status: 'Em desenvolvimento',
   featured: true,
   
+
 images: [
   '/projects/conrapp/01_login.png',
   '/projects/conrapp/02_calendario.png',
@@ -43,6 +44,7 @@ images: [
   '/projects/conrapp/04_discussoes.png',
   '/projects/conrapp/06_eventos.png',
 ],
+
 
   github: 'https://github.com/MaysonFCarmo/ConrApp',
 },
