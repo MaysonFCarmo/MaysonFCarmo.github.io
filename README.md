@@ -4,9 +4,9 @@
 
 Bem-vindo ao repositório do meu portfólio pessoal!
 
-Este projeto foi desenvolvido para apresentar minha trajetória na tecnologia, minhas habilidades técnicas e os projetos que venho construindo durante minha formação e evolução profissional.
+Este projeto apresenta minha trajetória na tecnologia, minhas habilidades técnicas e os projetos que desenvolvo durante minha formação acadêmica e evolução profissional.
 
-Meu objetivo é transformar conhecimento em soluções digitais funcionais, utilizando boas práticas de desenvolvimento, interfaces modernas e integração entre tecnologias.
+Meu objetivo é transformar conhecimento em soluções digitais funcionais, com foco em boas práticas de desenvolvimento, interfaces modernas e integração entre tecnologias.
 
 ## 🌐 Acesse meu portfólio
 
@@ -18,9 +18,9 @@ Explore meus projetos, conheça minhas habilidades e acompanhe minha evolução 
 
 Sou estudante de **Análise e Desenvolvimento de Sistemas**, com experiência profissional em suporte técnico, análise e resolução de problemas, atendimento a usuários e sistemas corporativos.
 
-Atualmente, estou direcionando minha carreira para o **desenvolvimento de software**, aprofundando meus conhecimentos em desenvolvimento frontend, backend, bancos de dados e integração de aplicações.
+Atualmente, direciono minha carreira para o **desenvolvimento de software**, aprofundando conhecimentos em frontend, backend, bancos de dados e integração de aplicações.
 
-Tenho interesse especial em criar aplicações web que resolvam problemas reais, automatizem processos e proporcionem boas experiências aos usuários.
+Tenho interesse em criar aplicações web que resolvam problemas reais, automatizem processos e ofereçam experiências simples e eficientes aos usuários.
 
 ## 🚀 Projetos em destaque
 
@@ -30,30 +30,49 @@ Aplicação web para coleta e análise de feedbacks, utilizando indicadores de e
 
 **Principais recursos:**
 - Pesquisas NPS, CSAT e CES.
-- Dashboard com gráficos interativos.
-- Autenticação administrativa.
-- Armazenamento de respostas em banco de dados.
-- Análise de indicadores de satisfação.
+- Dashboard administrativo com gráficos interativos.
+- Autenticação para acesso ao painel.
+- Armazenamento das respostas em banco de dados.
+- Visualização e análise de indicadores de satisfação.
 
 **Tecnologias:** React, JavaScript, HTML5, CSS3, Supabase, PostgreSQL e ApexCharts.
 
-**[Ver projeto no GitHub](https://github.com/MaysonFCarmo/Avali-plus)**
+**Status:** MVP desenvolvido.
+
+**[Ver código no GitHub](https://github.com/MaysonFCarmo/Avali-plus)** · **[Acessar demonstração](https://maysonfcarmo.github.io/Avali-plus/)**
+
+### 🎓 ConrApp — Plataforma Acadêmica
+
+Plataforma acadêmica que conecta estudantes e professores por meio de comunidades, discussões, calendário e inscrições em eventos.
+
+**Principais recursos:**
+- Autenticação demonstrativa com perfis de aluno e professor.
+- Calendário acadêmico com visualização de eventos.
+- Comunidades temáticas com participação de usuários.
+- Publicações e comentários nas discussões das comunidades.
+- Inscrição em eventos acadêmicos.
+- Funcionalidades e regras de acesso conforme o perfil de usuário.
+
+**Tecnologias:** React, JavaScript, HTML5, CSS3, Node.js, Express e Vite.
+
+**Status:** 🚧 Em desenvolvimento — MVP acadêmico.
+
+**[Ver código no GitHub](https://github.com/MaysonFCarmo/ConrApp)**
+
+> **Nota técnica:** o ConrApp utiliza uma API REST com Node.js e Express. Nesta etapa do MVP, os dados e as sessões demonstrativas são mantidos em memória, sem persistência em banco de dados. A demonstração pública será avaliada após as próximas etapas de desenvolvimento.
 
 ## 🛠️ Tecnologias e ferramentas
 
 **Frontend**
-- HTML5
-- CSS3
-- JavaScript
+- HTML5 e CSS3
+- JavaScript e TypeScript
 - React
 - Tailwind CSS
 
 **Backend e bancos de dados**
-- Node.js
-- PHP
-- Python
-- MySQL
-- PostgreSQL
+- Node.js e Express
+- PHP e Python
+- MySQL e PostgreSQL
 - Supabase
 
 **Ferramentas**
@@ -63,42 +82,62 @@ Aplicação web para coleta e análise de feedbacks, utilizando indicadores de e
 - Vite
 - GitHub Pages
 
+> Esta seção reúne tecnologias utilizadas em projetos e estudadas durante minha formação; os repositórios apresentam a aplicação prática de cada uma.
+
 ## 🏗️ Sobre este portfólio
 
-O portfólio foi desenvolvido como uma aplicação web utilizando React, JavaScript e Vite.
+Este portfólio foi desenvolvido com **React, TypeScript, CSS3 e Vite**, com layout responsivo e identidade visual **Matrix Tech**, baseada em tons escuros e detalhes em verde.
 
-A proposta é oferecer uma experiência moderna, responsiva e de navegação intuitiva, permitindo explorar projetos, tecnologias e informações profissionais em um único ambiente.
+Entre os recursos da interface estão a navegação por seções, os carrosséis de imagens dos projetos e a demonstração interativa do Avali+.
 
-O código está disponível publicamente para demonstrar minha organização, práticas de versionamento e evolução técnica.
+O código é público para apresentar minha organização, uso de versionamento e evolução técnica.
 
 ## ⚙️ Executando localmente
 
-**1. Clone o repositório**
+**Pré-requisitos:** Node.js e npm instalados.
 
-`git clone https://github.com/MaysonFCarmo/MaysonFCarmo.github.io.git`
+**1. Clone o repositório:**
 
-**2. Acesse o diretório**
+```bash
+git clone https://github.com/MaysonFCarmo/MaysonFCarmo.github.io.git
+```
 
-`cd MaysonFCarmo.github.io`
+**2. Acesse o diretório:**
 
-**3. Instale as dependências**
+```bash
+cd MaysonFCarmo.github.io
+```
 
-`npm install`
+**3. Instale as dependências:**
 
-**4. Inicie o servidor de desenvolvimento**
+```bash
+npm install
+```
 
-`npm run dev`
+**4. Inicie o servidor de desenvolvimento:**
+
+```bash
+npm run dev
+```
 
 O terminal exibirá o endereço local para acessar a aplicação.
 
-## 📈 Melhorias futuras
+**5. Para gerar a versão de produção (opcional):**
 
-- [ ] Adicionar novos projetos ao portfólio.
-- [ ] Implementar novas animações e interações.
-- [ ] Melhorar continuamente a experiência mobile.
+```bash
+npm run build
+```
+
+## 📈 Evolução e melhorias futuras
+
+- [x] Implementar galeria interativa de projetos.
+- [x] Adicionar demonstração ao vivo do Avali+.
+- [x] Integrar o ConrApp ao portfólio.
+- [x] Implementar identidade visual Matrix Tech.
+- [ ] Disponibilizar uma demonstração pública e segura do ConrApp após a conclusão das próximas etapas.
 - [ ] Adicionar estudos de caso dos projetos.
-- [ ] Ampliar a documentação técnica.
-- [ ] Incluir novas tecnologias conforme minha evolução profissional.
+- [ ] Aprimorar continuamente a experiência em dispositivos móveis.
+- [ ] Ampliar a documentação técnica conforme a evolução dos projetos.
 
 ## 📬 Contato
 
@@ -111,6 +150,6 @@ Estou aberto a oportunidades, conexões profissionais e projetos colaborativos n
 
 ---
 
-⭐ Se você gostou de algum projeto, fique à vontade para explorar os repositórios!
+⭐ Se algum projeto despertar seu interesse, fique à vontade para explorar os repositórios!
 
 **Desenvolvido por Mayson Farias.**
