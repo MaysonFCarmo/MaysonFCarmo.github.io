@@ -1746,3 +1746,47 @@ body .live-preview-actions button:hover {
     transition: none;
   }
 }
+
+/* ========================================
+   PROJETOS - AVALI+ E CONRAPP
+======================================== */
+
+/* Dois projetos lado a lado */
+.projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 32px;
+}
+
+/* Cards com largura consistente */
+.projects-section .project-card {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Fundo neutro do carrossel */
+.projects-section .project-visual {
+  background: #0b120e;
+  border: 1px solid #2b4835;
+  border-radius: 14px;
+}
+
+/* Título e status */
+.projects-section .project-title-row {
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tablets e celulares */
+@media (max-width: 900px) {
+  .projects-section .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .projects-section .project-card {
+    max-width: 650px;
+    justify-self: center;
+  }
+}

@@ -14,24 +14,39 @@ export type Project = {
 }
 
 export const projects: Project[] = [
-  {
-    id: 'conrapp',
-    number: '01',
-    title: 'CONRAPP',
-    category: 'Plataforma Acadêmica · Desenvolvimento Web',
-    description:
-      'Comunidade acadêmica com calendário de eventos, ' +
-      'discussões e interação entre estudantes e professores.',
-    technologies: [
-      'React',
-      'JavaScript',
-      'PostgreSQL',
-      'UX/UI',
-    ],
-    status: 'Em desenvolvimento',
-    featured: false,
-    images: [],
-  },
+  
+{
+  id: 'conrapp',
+  number: '02',
+  title: 'ConrApp',
+  category: 'Plataforma Acadêmica · Full Stack',
+  description:
+    'Plataforma acadêmica para conectar estudantes e professores, ' +
+    'com comunidades, discussões, calendário, eventos e inscrições. ' +
+    'Desenvolvida com React, Node.js e Express, ' +
+    'com autenticação demonstrativa e regras de acesso por perfil.',
+  technologies: [
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'React',
+    'Node.js',
+    'Express',
+  ],
+  status: 'Em desenvolvimento',
+  featured: true,
+  
+images: [
+  '/projects/conrapp/01_login.png',
+  '/projects/conrapp/02_calendario.png',
+  '/projects/conrapp/03_comunidades.png',
+  '/projects/conrapp/04_discussoes.png',
+  '/projects/conrapp/06_eventos.png',
+],
+
+  github: 'https://github.com/MaysonFCarmo/ConrApp',
+},
+
   {
     id: 'avali-plus',
     number: '01',
